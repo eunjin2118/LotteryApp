@@ -36,7 +36,16 @@ class MainActivity : AppCompatActivity() {
 
         val saveNumberBtn = findViewById<Button>(R.id.save_num)
         saveNumberBtn.setOnClickListener {
-            var currentNums = pref.getString("lottonums", "")
+            var lottoNums = pref.getString("lottonums", "")
+            var numList = if(lottoNums == ""){
+                mutableListOf<String>()
+            }else {
+                lottoNums!!.split(",").toMutableList()
+            }
+            numList.add(currentNums)
+            val editor = pref.edit()
+            editor.putString("lottonums", numList.joinToString ("," ))
+            editor.apply()
         }
     }
 
