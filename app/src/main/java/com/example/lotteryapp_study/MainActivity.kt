@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         val pref = getSharedPreferences("nums", Context.MODE_PRIVATE)
 //        val rnds = (1..45).random()
 //        val nums= mutableListOf<Int>()
