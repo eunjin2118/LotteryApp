@@ -25,4 +25,17 @@
         android:id="@+id/save_num"
         android:text="번호 저장"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/num_list"
+        android:text="저장된 확인"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/check_num"
+        android:text="당첨 번호 확인"/>
+
+
 </LinearLayout>

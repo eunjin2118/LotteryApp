@@ -1,6 +1,8 @@
 package com.example.lotteryapp_study
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -46,6 +48,18 @@ class MainActivity : AppCompatActivity() {
             val editor = pref.edit()
             editor.putString("lottonums", numList.joinToString ("," ))
             editor.apply()
+        }
+
+        findViewById<Button>(R.id.num_list).setOnClickListener {
+            val intent = Intent(this,
+            LotteryNumListActivity::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.check_num).setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW
+                , Uri.parse(("https://dhlottery.co.kr/gameResult.do?method=myWin")))
+            startActivity(intent)
         }
     }
 
